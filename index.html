@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoKomik - Baca Komik Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">NeoKomik</div>
+        <div class="search-container">
+            <button id="searchButton" class="search-toggle-btn"><i class="fas fa-search"></i></button>
+            <div id="searchBox" class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari komik..." onkeyup="searchKomik()">
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="homePage" class="page-section">
+            <h2 id="sectionTitle" class="section-title">Komik Terbaru</h2>
+            <div id="komikList" class="komik-list"></div>
+        </div>
+
+        <div id="libraryPage" class="page-section" style="display: none;">
+            <h2 class="section-title">Library</h2>
+            <div id="bookmarkList" class="komik-list"></div>
+        </div>
+
+        <div id="komikDetail" class="komik-detail" style="display:none;">
+            <div class="detail-header">
+                <img id="detailGambar" src="" alt="Cover Komik">
+                <div class="detail-info">
+                    <h2 id="detailJudul"></h2>
+                    <p id="detailSinopsis"></p>
+                    <div class="detail-meta">
+                        <span id="detailStatus" class="meta-item"></span>
+                        <span id="detailRating" class="meta-item"></span>
+                        <button id="bookmarkToggleBtn" class="bookmark-toggle-btn meta-item">
+                            <i class="fas fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <h3>Daftar Chapter</h3>
+            <ul id="chapterList"></ul>
+        </div>
+
+        <div id="chapterView" class="chapter-view" style="display:none;">
+            <div id="topControls" class="chapter-controls top">
+                <button onclick="closeChapter()" class="control-btn"><i class="fas fa-arrow-left"></i></button>
+                <h2 id="chapterTitle"></h2>
+                <span class="control-btn empty-placeholder"></span>
+            </div>
+            <div id="chapterImages" class="chapter-images"></div>
+            <div id="bottomControls" class="chapter-controls bottom">
+                <button id="prevChapterBtn" class="control-btn"><i class="fas fa-chevron-left"></i> Prev</button>
+                <button id="nextChapterBtn" class="control-btn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active" data-page="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#explore" class="nav-item disabled" data-page="explore">
+            <i class="fas fa-compass"></i>
+            <span>Explore</span>
+        </a>
+        <a href="#library" class="nav-item" data-page="library">
+            <i class="fas fa-bookmark"></i>
+            <span>Library</span>
+        </a>
+        <a href="#all-series" class="nav-item disabled" data-page="all-series">
+            <i class="fas fa-list"></i>
+            <span>All Series</span>
+        </a>
+    </nav>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
